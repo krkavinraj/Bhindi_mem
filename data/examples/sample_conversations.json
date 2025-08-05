@@ -1,0 +1,112 @@
+{
+  "sample_conversations": [
+    {
+      "input": "I love playing guitar and I've been learning it for 3 years",
+      "expected_entities": [
+        {
+          "type": "Person",
+          "name": "User",
+          "properties": {}
+        },
+        {
+          "type": "Skill",
+          "name": "Guitar Playing",
+          "properties": {
+            "level": "intermediate",
+            "category": "music"
+          }
+        }
+      ],
+      "expected_relationships": [
+        {
+          "from": "User",
+          "to": "Guitar Playing",
+          "type": "SKILLED_IN",
+          "properties": {
+            "since": "3 years ago",
+            "level": "intermediate"
+          }
+        },
+        {
+          "from": "User",
+          "to": "Guitar Playing",
+          "type": "LIKES",
+          "properties": {
+            "intensity": "high"
+          }
+        }
+      ]
+    },
+    {
+      "input": "I work at Google as a software engineer",
+      "expected_entities": [
+        {
+          "type": "Person",
+          "name": "User",
+          "properties": {}
+        },
+        {
+          "type": "Organization",
+          "name": "Google",
+          "properties": {
+            "type": "company",
+            "industry": "technology"
+          }
+        }
+      ],
+      "expected_relationships": [
+        {
+          "from": "User",
+          "to": "Google",
+          "type": "WORKS_AT",
+          "properties": {
+            "position": "software engineer"
+          }
+        }
+      ]
+    },
+    {
+      "input": "I want to learn machine learning by the end of this year",
+      "expected_entities": [
+        {
+          "type": "Person",
+          "name": "User",
+          "properties": {}
+        },
+        {
+          "type": "Goal",
+          "name": "Learn Machine Learning",
+          "properties": {
+            "deadline": "end of this year",
+            "status": "planned"
+          }
+        },
+        {
+          "type": "Concept",
+          "name": "Machine Learning",
+          "properties": {
+            "category": "technology"
+          }
+        }
+      ],
+      "expected_relationships": [
+        {
+          "from": "User",
+          "to": "Learn Machine Learning",
+          "type": "WANTS_TO",
+          "properties": {
+            "deadline": "end of this year"
+          }
+        },
+        {
+          "from": "Learn Machine Learning",
+          "to": "Machine Learning",
+          "type": "RELATED_TO",
+          "properties": {
+            "type": "learning_objective"
+          }
+        }
+      ]
+    }
+  ]
+}

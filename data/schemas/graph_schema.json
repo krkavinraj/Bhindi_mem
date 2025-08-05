@@ -1,0 +1,103 @@
+{
+  "node_types": {
+    "Person": {
+      "properties": ["name", "age", "occupation", "description"],
+      "required": ["name"],
+      "color": "#FF6B6B"
+    },
+    "Concept": {
+      "properties": ["name", "category", "description", "importance"],
+      "required": ["name"],
+      "color": "#4ECDC4"
+    },
+    "Event": {
+      "properties": ["name", "date", "location", "description", "participants"],
+      "required": ["name"],
+      "color": "#45B7D1"
+    },
+    "Preference": {
+      "properties": ["name", "type", "strength", "description"],
+      "required": ["name", "type"],
+      "color": "#96CEB4"
+    },
+    "Location": {
+      "properties": ["name", "type", "country", "coordinates", "description"],
+      "required": ["name"],
+      "color": "#FFEAA7"
+    },
+    "Organization": {
+      "properties": ["name", "type", "industry", "description"],
+      "required": ["name"],
+      "color": "#DDA0DD"
+    },
+    "Skill": {
+      "properties": ["name", "level", "category", "description"],
+      "required": ["name"],
+      "color": "#98D8C8"
+    },
+    "Goal": {
+      "properties": ["name", "status", "deadline", "description", "priority"],
+      "required": ["name"],
+      "color": "#F7DC6F"
+    },
+    "Memory": {
+      "properties": ["content", "date", "emotion", "importance", "context"],
+      "required": ["content"],
+      "color": "#BB8FCE"
+    }
+  },
+  "relationship_types": {
+    "KNOWS": {
+      "description": "Person knows another person",
+      "properties": ["since", "strength", "context"]
+    },
+    "LIKES": {
+      "description": "Person likes something",
+      "properties": ["intensity", "reason", "since"]
+    },
+    "DISLIKES": {
+      "description": "Person dislikes something",
+      "properties": ["intensity", "reason", "since"]
+    },
+    "WORKS_AT": {
+      "description": "Person works at organization",
+      "properties": ["position", "since", "status"]
+    },
+    "LIVES_IN": {
+      "description": "Person lives in location",
+      "properties": ["since", "status"]
+    },
+    "ATTENDED": {
+      "description": "Person attended event",
+      "properties": ["role", "duration"]
+    },
+    "SKILLED_IN": {
+      "description": "Person has skill",
+      "properties": ["level", "since", "certified"]
+    },
+    "WANTS_TO": {
+      "description": "Person wants to achieve goal",
+      "properties": ["priority", "deadline", "progress"]
+    },
+    "REMEMBERS": {
+      "description": "Person remembers memory",
+      "properties": ["clarity", "emotion", "frequency"]
+    },
+    "RELATED_TO": {
+      "description": "General relationship between entities",
+      "properties": ["type", "strength", "description"]
+    },
+    "PART_OF": {
+      "description": "Entity is part of another entity",
+      "properties": ["role", "percentage"]
+    },
+    "CREATED": {
+      "description": "Entity created another entity",
+      "properties": ["date", "method", "purpose"]
+    },
+    "LEARNED": {
+      "description": "Person learned concept or skill",
+      "properties": ["date", "method", "proficiency"]
+    }
+  }
+}
